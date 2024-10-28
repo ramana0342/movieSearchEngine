@@ -1,0 +1,319 @@
+body{
+    
+    margin: 0px !important;
+    padding: 0px !important;
+
+}
+
+
+.mainContainer{
+    min-height:100vh ;
+    height:fit-content;
+    margin: 0px !important;
+    padding: 0px !important;
+    background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,0.6)),url(https://e0.pxfuel.com/wallpapers/730/363/desktop-wallpaper-filmmaking-documentary.jpg);
+     background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+    
+}
+
+
+
+
+#input{
+   padding: 60px;
+   
+}
+#inputFields{
+    width:400px;
+    position: fixed;
+   z-index: 1000;
+}
+#firstImage {
+    width: 100%;
+    height: 400px;
+}
+
+
+.card{
+    border:2px solid blue !important;
+    margin:15px;
+    height: 470px !important;
+    text-align: center;
+    
+}
+.card-img-top{
+    width:100%;
+    height: 300px;
+}
+.card-body{
+    
+    padding: 10px;
+    background-color: rgb(69,69,69);
+    color: rgb(255, 255, 255) !important;
+    
+}
+.card-body p{
+    margin: 0px;
+    padding: 0px;
+}
+.image-container{
+     position: relative;
+}
+
+.KnowMore{
+    margin: 4px;
+    cursor: pointer;
+    background-color:darkorange;
+    border-radius: 5px;
+}
+
+.heart-icon{
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    color:darkred; 
+    font-size: 30px; 
+    cursor: pointer !important; 
+    z-index: 10; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 60%
+}
+
+
+#movieStatus{
+    color: red;
+}
+
+
+.navBar{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+}
+.navBar b{
+    cursor: pointer;
+}
+
+.hidden { 
+    display: none; 
+}
+.active { 
+    display: block; 
+}
+
+
+.oneMovie{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    height: 100vh; 
+    padding-top: 30px;
+}
+
+ .movieContent{
+    height: 90%;
+    padding: 20px;
+    width: 67%;
+    
+}
+.movieContentInnerDiv{
+    padding: 25px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,0.9)),url(https://img.lovepik.com/background/20211022/large/lovepik-film-background-board-film-background-image_500877889.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+}
+
+.movieContent p{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);            
+}
+
+.imgContainer{
+    padding: 20px;
+    height: 90%; 
+    width: 33%;
+    position: relative;
+    
+}
+
+.imgContainer .heart-icon{
+    position: absolute; 
+    top: 35px; 
+    right: 35px; 
+    color:darkred; 
+    font-size: 30px; 
+    cursor: pointer !important; 
+    z-index: 10; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 60%
+}
+
+
+img{
+
+   width: 100%;
+   height: 100%;
+}
+
+.movieContent b{
+    color: white;
+    margin: 0px;
+    margin: 0px;
+    font-size: none;
+}
+.movieContent p{
+      color: red;
+      margin: 0px;
+      margin: 0px;
+      font-size: none;
+}
+.movieContentInnerDiv h1{
+    color: yellowgreen;
+}
+
+.ratingIcon{
+    color: yellow;
+}
+
+.dotIconSpan{
+     display: flex;
+     align-items: center;
+
+}
+.dotIconSpan i{
+    margin: 5px;
+}
+.dotIcon{
+    padding-top: 4px;
+    font-size: 7px;
+}
+.rating-container {
+    text-align: center;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.rating-container span{
+    margin-left: 10px;
+}
+
+.watchListCotainer{
+    
+    margin-top: 2000px;
+}
+
+.carouselSection{
+    height: 100vh;
+    width:100%;
+    margin:0px;
+    padding-top: 8px;
+}
+.curosalImg{
+    height: 75vh;
+    
+}
+
+sup b{
+    border: 2px solid red;
+    border-radius: 50%;
+    background-color: red;
+    padding: 8px;
+    display: inline-block;
+   
+}
+.homeSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.watchListDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+
+
+
+
+@media screen and (max-width:420px) {
+    #inputFields{
+        width:300px;
+        
+    }
+}
+
+@media screen and (max-width:450px){
+    .card{
+        height: fit-content !important;
+        
+    }
+}
+ 
+@media  screen and (min-width:300px) and (max-width:450px) {
+    .rating-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .oneMovie{
+        display: flex;
+        justify-content: center ;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content; 
+        padding-top: 70px;
+        padding-bottom: 20px;
+    }
+    .movieContent{
+        height: fit-content;
+        width: 100%;
+        padding: 0px;
+        
+        }
+        .imgContainer{
+            width: 100%;
+            padding: 0px;
+        
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
