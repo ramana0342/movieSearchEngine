@@ -259,11 +259,11 @@ function movieswatchList(){
     let wachListContainer= document.getElementById("watchListCards")
     wachListContainer.innerHTML = '';
     if(movieArr.length>0){
-        movieArr.map(async(Id)=>{
+        movieArr.map((Id)=>{
           // console.log("Cart")
            // console.log(Id)
-            await axios.get(`https://www.omdbapi.com/?i=${Id}&apikey=2884265`).then((res)=>{
-              if(res){
+            axios.get(`https://www.omdbapi.com/?i=${Id}&apikey=2884265`).then((res)=>{
+              if(res.data){
                 wachListContainer.innerHTML +=`<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                  <div class="card">
                  <div class="image-container">
@@ -279,6 +279,7 @@ function movieswatchList(){
              </div>` 
             
               }else{
+                console.log("late")
                 wachListContainer.innerHTML +=  `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
              <div class="card placeholder-glow" aria-hidden="true">
              <img src=" " class="card-img-top placeholder" alt=""/>
