@@ -23,16 +23,17 @@ function showSection(section) {
     const singleMovieSection = document.getElementById('singleMovieContainer')
 
     if (section === 'home') {
+     
         homeSection.classList.remove('hidden');
         homeSection.classList.add('active');
         watchSection.classList.remove('active');
         watchSection.classList.add('hidden');
         singleMovieSection.classList.remove("active")
         singleMovieSection.classList.add("hidden")
-      
+        
 
     } else if (section === 'watch') {
-        
+       
         watchSection.classList.remove('hidden');
         watchSection.classList.add('active');
         homeSection.classList.remove('active');
@@ -264,8 +265,9 @@ function movieswatchList(){
           // console.log("Cart")
            // console.log(Id)
             await axios.get(`https://www.omdbapi.com/?i=${Id}&apikey=2884265`).then((res)=>{
-                wachListContainer.innerHTML += `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="card">
+              if(res){
+                wachListContainer.innerHTML +=`<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                 <div class="card">
                  <div class="image-container">
                      <img src="${res.data.Poster}" class="card-img-top" alt="...">
                        <i class="fa-solid fa-heart heart-icon" onclick="removeItemToWatchlist('${res.data.imdbID}')"></i>
@@ -276,7 +278,27 @@ function movieswatchList(){
                   <button onclick="showSection('${res.data.imdbID}')" class="KnowMore">Know More</button>
                   </div>
                 </div> 
-             </div>`
+             </div>` 
+            
+              }else{
+                wachListContainer.innerHTML +=  `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+             <div class="card placeholder-glow" aria-hidden="true">
+             <img src=" " class="card-img-top placeholder" alt=""/>
+             <div class="card-body">
+               <h5 class="card-title placeholder-glow">
+                 <span class="placeholder col-6"></span>
+               </h5>
+               <p class="card-text placeholder-glow">
+                 <span class="placeholder col-7"></span>
+                 <span class="placeholder col-8"></span>
+               </p>
+               <a class="btn btn-primary disabled placeholder col-6 KnowMore" aria-disabled="true"></a>
+             </div>
+           </div>
+           </div>`
+              }
+              
+                
          
 
               
