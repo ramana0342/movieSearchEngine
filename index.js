@@ -60,7 +60,7 @@ function showSection(section) {
 var movies=[]
 
 
-filmName.addEventListener("input",()=>{
+filmName.addEventListener("input",async()=>{
     movieContainer.innerHTML =""
     MovieStatus.innerHTML=""
     MovieStatus.innerHTML="<p><h1>Loading.......</h1></p>"
@@ -68,19 +68,16 @@ filmName.addEventListener("input",()=>{
          movies=[]
          MovieStatus.innerHTML=""
          CarouselFun()
-         MovieStatus.innerHTML=""
     }
-    else{
+    else if(filmName.value!==""){
              // API Link    ======>https://www.omdbapi.com/?apikey=45f0782a&s=titanic
         axios.get(`https://www.omdbapi.com/?apikey=45f0782a&s=${filmName.value}`).then((res)=>{
 
             console.log(res)
-        if(res.data.Response=="True"){
+        if(res.data.Response=="True" && filmName.value!==""){
             var movies=res.data.Search;
             movies.map((movie,index)=>{
-                // let favouriteMovie = movieArr.includes(movie.imdbID)
-                // let iconPresent = favouriteMovie ?  `<i class="fa-solid fa-heart heart-icon" onclick="removeWatchlist('${movie.imdbID}')" ></i>` :  `<i class="fa-regular fa-heart heart-icon" onclick="addWatchlistFun('${movie.imdbID}')"></i>`
-                // 
+                
                 MovieStatus.innerHTML=""
                 movieContainer.innerHTML += `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                                                 <div class="card">
@@ -98,7 +95,8 @@ filmName.addEventListener("input",()=>{
                                              updateMovieIcons()
                                              
             })
-        }else{
+        }else if(filmName.value!=="" && res.data.Response=="False"){
+             movies=[]
             MovieStatus.innerHTML="<p><h1>!!!  Error 404 Movie  not found</h1></p>"
         }
         })
