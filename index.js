@@ -72,13 +72,13 @@ filmName.addEventListener("input",async()=>{
     else if(filmName.value!==""){
              // API Link    ======>https://www.omdbapi.com/?apikey=45f0782a&s=titanic
         axios.get(`https://www.omdbapi.com/?apikey=45f0782a&s=${filmName.value}`).then((res)=>{
-
-            console.log(res)
+               
+            //console.log(res)
         if(res.data.Response=="True" && filmName.value!==""){
             var movies=res.data.Search;
+            MovieStatus.innerHTML=""
             movies.map((movie,index)=>{
                 
-                MovieStatus.innerHTML=""
                 movieContainer.innerHTML += `<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
                                                 <div class="card">
                                                  <div class="image-container">
